@@ -1,0 +1,254 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --primary: #60a5fa;
+  --primary-dark: #2563eb;
+  --accent: #fbbf24;
+  --bg: #181f2a;
+  --surface: #232b3a;
+  --white: #fff;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+header {
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links li a:hover {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #cbd5e1;
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--surface);
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Destinations Section */
+.destinations {
+  margin: 2rem 0 0 0;
+}
+
+.destinations h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.destination-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover img {
+  transform: scale(1.05);
+}
+
+.destination-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: #343a40;
+}
+
+.destination-card p {
+  margin: 0 1rem 1.5rem;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background: var(--surface);
+  color: var(--muted);
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-top: 3rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 18px 18px 0 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav {
+    max-width: 100%;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .destination-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 2.5rem 1rem 3rem 1rem;
+  }
+  nav {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--surface);
+    position: absolute;
+    top: 70px;
+    right: 1.5rem;
+    width: 160px;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+    border-radius: 10px;
+    padding: 1rem 0;
+    z-index: 200;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .burger {
+    display: flex;
+  }
+}
